@@ -54,6 +54,14 @@ class MyViewController: UIViewController {
         self.myView.myButton.rx.tap
             .bind(to: viewModel.tap)
             .disposed(by: self.disposeBag)
+        
+        self.myView.timerButton.rx.tap
+            .bind(to: viewModel.timerTap)
+            .disposed(by: self.disposeBag)
+        
+        self.myViewModel.timerString
+            .bind(to: self.myView.timerLabel.rx.text)
+            .disposed(by: self.disposeBag)
     }
 }
 

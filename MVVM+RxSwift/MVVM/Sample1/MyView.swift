@@ -24,6 +24,20 @@ final class MyView: UIView {
         return button
     }()
     
+    lazy var timerLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "Timer"
+        return label
+    }()
+    
+    lazy var timerButton: UIButton = {
+        let config = UIButton.Configuration.filled()
+        var button = UIButton(configuration: config)
+        button.setTitle("버튼2", for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -45,6 +59,18 @@ final class MyView: UIView {
         myButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(myLabel.snp.bottom).offset(20)
+        }
+        
+        addSubview(timerLabel)
+        timerLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(myButton.snp.bottom).offset(20)
+        }
+        
+        addSubview(timerButton)
+        timerButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(timerLabel.snp.bottom).offset(20)
         }
     }
 }
