@@ -16,6 +16,9 @@
 		B8B624A82C1C4CD50021DB84 /* CLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A72C1C4CD50021DB84 /* CLView.swift */; };
 		B8B624AA2C1C4CEB0021DB84 /* CLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A92C1C4CEB0021DB84 /* CLViewModel.swift */; };
 		B8B624AC2C1C4CF00021DB84 /* CLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624AB2C1C4CF00021DB84 /* CLViewController.swift */; };
+		B8B624AF2C1C4F3D0021DB84 /* BindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624AE2C1C4F3D0021DB84 /* BindView.swift */; };
+		B8B624B12C1C4F4B0021DB84 /* BindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624B02C1C4F4B0021DB84 /* BindViewModel.swift */; };
+		B8B624B32C1C4F530021DB84 /* BindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624B22C1C4F530021DB84 /* BindViewController.swift */; };
 		B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */; };
 		B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */; };
 		B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */; };
@@ -42,6 +45,9 @@
 		B8B624A72C1C4CD50021DB84 /* CLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLView.swift; sourceTree = "<group>"; };
 		B8B624A92C1C4CEB0021DB84 /* CLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLViewModel.swift; sourceTree = "<group>"; };
 		B8B624AB2C1C4CF00021DB84 /* CLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLViewController.swift; sourceTree = "<group>"; };
+		B8B624AE2C1C4F3D0021DB84 /* BindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindView.swift; sourceTree = "<group>"; };
+		B8B624B02C1C4F4B0021DB84 /* BindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewModel.swift; sourceTree = "<group>"; };
+		B8B624B22C1C4F530021DB84 /* BindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewController.swift; sourceTree = "<group>"; };
 		B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B8CE4BC12BA8AA7200E18B9B /* MVVM+RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM+RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +107,16 @@
 			path = CombineLatest;
 			sourceTree = "<group>";
 		};
+		B8B624AD2C1C4F2F0021DB84 /* Bind */ = {
+			isa = PBXGroup;
+			children = (
+				B8B624AE2C1C4F3D0021DB84 /* BindView.swift */,
+				B8B624B02C1C4F4B0021DB84 /* BindViewModel.swift */,
+				B8B624B22C1C4F530021DB84 /* BindViewController.swift */,
+			);
+			path = Bind;
+			sourceTree = "<group>";
+		};
 		B8BA7A892BD7EF0D00B60B3D /* Sample1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +171,7 @@
 				B8CE4BC62BA8AA7200E18B9B /* SceneDelegate.swift */,
 				B8BA7A8A2BD7EF1B00B60B3D /* Sample2 */,
 				B8BA7A892BD7EF0D00B60B3D /* Sample1 */,
+				B8B624AD2C1C4F2F0021DB84 /* Bind */,
 				B8B6249F2C1C494E0021DB84 /* Timer */,
 				B8B624A62C1C4CAF0021DB84 /* CombineLatest */,
 				B8B624982C1C49120021DB84 /* Debounce & Throttle */,
@@ -245,6 +262,7 @@
 				B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */,
 				B8CE4BC92BA8AA7200E18B9B /* MyViewController.swift in Sources */,
 				B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */,
+				B8B624B32C1C4F530021DB84 /* BindViewController.swift in Sources */,
 				B8B624A32C1C495E0021DB84 /* TimerViewModel.swift in Sources */,
 				B8B6249E2C1C493F0021DB84 /* DTViewController.swift in Sources */,
 				B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */,
@@ -256,7 +274,9 @@
 				B8B6249A2C1C49280021DB84 /* DTView.swift in Sources */,
 				B8B6249C2C1C49300021DB84 /* DTViewModel.swift in Sources */,
 				B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */,
+				B8B624AF2C1C4F3D0021DB84 /* BindView.swift in Sources */,
 				B8CE4BDD2BA8AB4000E18B9B /* MyView.swift in Sources */,
+				B8B624B12C1C4F4B0021DB84 /* BindViewModel.swift in Sources */,
 				B8CE4BC72BA8AA7200E18B9B /* SceneDelegate.swift in Sources */,
 				B8CE4BDB2BA8AB3B00E18B9B /* MyModel.swift in Sources */,
 			);

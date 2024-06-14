@@ -15,6 +15,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import SnapKit
 
 class MyViewController: UIViewController {
     
@@ -53,14 +54,6 @@ class MyViewController: UIViewController {
         // ViewController(View)에서 ViewModel의 input으로 명령을 보냄
         self.myView.myButton.rx.tap
             .bind(to: viewModel.tap)
-            .disposed(by: self.disposeBag)
-        
-        self.myView.bindTestButton.rx.tap
-            .bind(to: viewModel.bindTestTap)
-            .disposed(by: self.disposeBag)
-        
-        self.myViewModel.bindTestString
-            .bind(to: self.myView.bindTestLabel.rx.text)
             .disposed(by: self.disposeBag)
     }
 }

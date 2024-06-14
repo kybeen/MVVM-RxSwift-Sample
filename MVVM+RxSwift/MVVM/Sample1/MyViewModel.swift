@@ -13,8 +13,8 @@ protocol MyViewModelType {
     var tap: PublishRelay<Void> { get }
     var number: Driver<String> { get }
     
-    var bindTestTap: PublishRelay<Void> { get }
-    var bindTestString: PublishSubject<String> { get }
+//    var bindTestTap: PublishRelay<Void> { get }
+//    var bindTestString: PublishSubject<String> { get }
 }
 
 final class MyViewModel: MyViewModelType {
@@ -26,8 +26,8 @@ final class MyViewModel: MyViewModelType {
     let tap = PublishRelay<Void>()
     let number: Driver<String>
     
-    let bindTestTap = PublishRelay<Void>()
-    let bindTestString = PublishSubject<String>()
+//    let bindTestTap = PublishRelay<Void>()
+//    let bindTestString = PublishSubject<String>()
     
     private let model = BehaviorRelay<MyModel>(value: .init(number: 100))
     
@@ -47,31 +47,5 @@ final class MyViewModel: MyViewModelType {
                 return nextModel
             }.bind(to: self.model)
             .disposed(by: disposeBag)
-        
-        
-        self.bindTestTap
-            .withUnretained(self)
-            .subscribe(onNext: { _ in
-                print("Bind Test!!!")
-                self.bindTest()
-                /*
-                 onNext, onCompleted를 모두 전달하는 이벤트는 bind로 처리하면 안됨
-                 */
-                    .subscribe(onNext: {
-                        self.bindTestString.onNext($0)
-                    })
-//                    .bind(to: self.bindTestString)
-                    .disposed(by: self.disposeBag)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    private func bindTest() -> Observable<String> {
-        return Observable.create { emitter in
-            // onNext, onCompleted를 전달하는 이벤트
-            emitter.onNext("\(Int.random(in: 0...100))")
-            emitter.onCompleted()
-            return Disposables.create()
-        }
     }
 }
