@@ -44,7 +44,7 @@ class MyViewController: UIViewController {
         self.bind(viewModel: self.myViewModel as! MyViewModel)
     }
 
-    private func bind(viewModel: MyViewModel) {
+    private func bind(viewModel: MyViewModelType) {
         // ViewModel의 output을 ViewController(View)가 구독
         self.myViewModel.number
             .drive(self.myView.myLabel.rx.text) // Driver를 바인딩
@@ -55,13 +55,33 @@ class MyViewController: UIViewController {
             .bind(to: viewModel.tap)
             .disposed(by: self.disposeBag)
         
-        self.myView.timerButton.rx.tap
-            .bind(to: viewModel.timerTap)
+//        self.myView.timerButton.rx.tap
+//            .bind(to: viewModel.timerTap)
+//            .disposed(by: self.disposeBag)
+//        
+//        self.myViewModel.timerString
+//            .bind(to: self.myView.timerLabel.rx.text)
+//            .disposed(by: self.disposeBag)
+        
+        self.myView.bindTestButton.rx.tap
+            .bind(to: viewModel.bindTestTap)
             .disposed(by: self.disposeBag)
         
-        self.myViewModel.timerString
-            .bind(to: self.myView.timerLabel.rx.text)
+        self.myViewModel.bindTestString
+            .bind(to: self.myView.bindTestLabel.rx.text)
             .disposed(by: self.disposeBag)
+        
+        self.myView.leftNumButton.rx.tap
+            .bind(to: viewModel.leftNumButtonTap)
+            .disposed(by: disposeBag)
+        
+        self.myView.rightNumButton.rx.tap
+            .bind(to: viewModel.rightNumButtonTap)
+            .disposed(by: disposeBag)
+        
+        self.myViewModel.leftRightNumString
+            .bind(to: self.myView.leftRightNumLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 

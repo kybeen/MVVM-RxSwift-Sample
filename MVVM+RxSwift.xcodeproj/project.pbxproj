@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8B6249A2C1C49280021DB84 /* DTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624992C1C49280021DB84 /* DTView.swift */; };
+		B8B6249C2C1C49300021DB84 /* DTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6249B2C1C49300021DB84 /* DTViewModel.swift */; };
+		B8B6249E2C1C493F0021DB84 /* DTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6249D2C1C493F0021DB84 /* DTViewController.swift */; };
+		B8B624A12C1C49570021DB84 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A02C1C49570021DB84 /* TimerView.swift */; };
+		B8B624A32C1C495E0021DB84 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */; };
+		B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A42C1C49670021DB84 /* TimerViewController.swift */; };
 		B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */; };
 		B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */; };
 		B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */; };
@@ -24,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8B624992C1C49280021DB84 /* DTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTView.swift; sourceTree = "<group>"; };
+		B8B6249B2C1C49300021DB84 /* DTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTViewModel.swift; sourceTree = "<group>"; };
+		B8B6249D2C1C493F0021DB84 /* DTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTViewController.swift; sourceTree = "<group>"; };
+		B8B624A02C1C49570021DB84 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		B8B624A42C1C49670021DB84 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B8CE4BC12BA8AA7200E18B9B /* MVVM+RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM+RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +65,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8B624982C1C49120021DB84 /* Debounce & Throttle */ = {
+			isa = PBXGroup;
+			children = (
+				B8B624992C1C49280021DB84 /* DTView.swift */,
+				B8B6249B2C1C49300021DB84 /* DTViewModel.swift */,
+				B8B6249D2C1C493F0021DB84 /* DTViewController.swift */,
+			);
+			path = "Debounce & Throttle";
+			sourceTree = "<group>";
+		};
+		B8B6249F2C1C494E0021DB84 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				B8B624A02C1C49570021DB84 /* TimerView.swift */,
+				B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */,
+				B8B624A42C1C49670021DB84 /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		B8BA7A892BD7EF0D00B60B3D /* Sample1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +137,8 @@
 		B8CE4BD92BA8AB3000E18B9B /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				B8B6249F2C1C494E0021DB84 /* Timer */,
+				B8B624982C1C49120021DB84 /* Debounce & Throttle */,
 				B8BA7A8A2BD7EF1B00B60B3D /* Sample2 */,
 				B8BA7A892BD7EF0D00B60B3D /* Sample1 */,
 			);
@@ -194,8 +228,14 @@
 				B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */,
 				B8CE4BC92BA8AA7200E18B9B /* MyViewController.swift in Sources */,
 				B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */,
+				B8B624A32C1C495E0021DB84 /* TimerViewModel.swift in Sources */,
+				B8B6249E2C1C493F0021DB84 /* DTViewController.swift in Sources */,
 				B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */,
 				B8CE4BE92BA8ACC300E18B9B /* MyViewModel.swift in Sources */,
+				B8B624A12C1C49570021DB84 /* TimerView.swift in Sources */,
+				B8B6249A2C1C49280021DB84 /* DTView.swift in Sources */,
+				B8B6249C2C1C49300021DB84 /* DTViewModel.swift in Sources */,
+				B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */,
 				B8CE4BDD2BA8AB4000E18B9B /* MyView.swift in Sources */,
 				B8CE4BC72BA8AA7200E18B9B /* SceneDelegate.swift in Sources */,
 				B8CE4BDB2BA8AB3B00E18B9B /* MyModel.swift in Sources */,

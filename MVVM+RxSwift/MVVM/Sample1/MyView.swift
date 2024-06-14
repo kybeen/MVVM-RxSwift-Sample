@@ -24,19 +24,45 @@ final class MyView: UIView {
         return button
     }()
     
-    lazy var timerLabel: UILabel = {
+    lazy var bindTestLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "Timer"
+        label.text = "흠..."
         return label
     }()
-    
-    lazy var timerButton: UIButton = {
+    lazy var bindTestButton: UIButton = {
         let config = UIButton.Configuration.filled()
         var button = UIButton(configuration: config)
-        button.setTitle("버튼2", for: .normal)
+        button.setTitle("Bind Test", for: .normal)
         return button
     }()
+    
+    lazy var leftRightNumLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "(왼쪽숫자) : (오른쪽숫자)"
+        return label
+    }()
+    lazy var numStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    lazy var leftNumButton: UIButton = {
+        let config = UIButton.Configuration.filled()
+        var button = UIButton(configuration: config)
+        button.setTitle("왼쪽 숫자", for: .normal)
+        return button
+    }()
+    lazy var rightNumButton: UIButton = {
+        let config = UIButton.Configuration.filled()
+        var button = UIButton(configuration: config)
+        button.setTitle("오른쪽 숫자", for: .normal)
+        return button
+    }()
+    
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,26 +78,38 @@ final class MyView: UIView {
         
         addSubview(myLabel)
         myLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(100)
         }
-        
         addSubview(myButton)
         myButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(myLabel.snp.bottom).offset(20)
         }
         
-        addSubview(timerLabel)
-        timerLabel.snp.makeConstraints { make in
+        addSubview(bindTestLabel)
+        bindTestLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(myButton.snp.bottom).offset(20)
         }
-        
-        addSubview(timerButton)
-        timerButton.snp.makeConstraints { make in
+        addSubview(bindTestButton)
+        bindTestButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(timerLabel.snp.bottom).offset(20)
+            make.top.equalTo(bindTestLabel.snp.bottom).offset(20)
         }
+        
+        addSubview(leftRightNumLabel)
+        leftRightNumLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(bindTestButton.snp.bottom).offset(20)
+        }
+        addSubview(numStackView)
+        numStackView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(leftRightNumLabel.snp.bottom).offset(20)
+        }
+        numStackView.addArrangedSubview(leftNumButton)
+        numStackView.addArrangedSubview(rightNumButton)
     }
 }
 

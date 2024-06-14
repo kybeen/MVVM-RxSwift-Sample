@@ -10,12 +10,15 @@ import RxSwift
 
 // ViewModel이 받을 input/output 정의
 protocol MyViewModelType {
-    var tap: PublishRelay<Void> { get } // input
-    var number: Driver<String> { get } // output
+    var tap: PublishRelay<Void> { get }
+    var number: Driver<String> { get }
     
-    var timerTap: PublishRelay<Void> { get }
-    var timerEvent: PublishRelay<Void> { get }
-    var timerString: PublishSubject<String> { get }
+    var bindTestTap: PublishRelay<Void> { get }
+    var bindTestString: PublishSubject<String> { get }
+    
+    var leftNumButtonTap: PublishRelay<Void> { get }
+    var rightNumButtonTap: PublishRelay<Void> { get }
+    var leftRightNumString: PublishSubject<String> { get }
 }
 
 final class MyViewModel: MyViewModelType {
@@ -24,28 +27,27 @@ final class MyViewModel: MyViewModelType {
      - Driver : UI 스레드에서 돌아가는 Observable
      */
     
-    // input
     let tap = PublishRelay<Void>()
-    
-    // output
     let number: Driver<String>
     
+    let bindTestTap = PublishRelay<Void>()
+    let bindTestString = PublishSubject<String>()
     
-    let timerTap = PublishRelay<Void>()
-    let timerEvent = PublishRelay<Void>()
-    let timerString = PublishSubject<String>()
+    let leftNumButtonTap = PublishRelay<Void>()
+    let rightNumButtonTap = PublishRelay<Void>()
+    let leftNum = PublishSubject<Int>()
+    let rightNum = BehaviorSubject<Int>(value: 2)
+    let leftRightNumString = PublishSubject<String>()
     
     private let model = BehaviorRelay<MyModel>(value: .init(number: 100))
     
     let disposeBag = DisposeBag()
-    var timerDisposable: Disposable? // 타이머 구독을 따로 종료하기 위한 Disposable
     
     init() {
         // Model에서 발생한 notification은 ViewModel의 init에서 다룸
         self.number = self.model
             .map { "Number: \($0.number)" }
             .asDriver(onErrorRecover: { _ in .empty() })
-        
         // ViewModel은 View(ViewController)의 명령을 받아 Model에 반영
         self.tap
             .withLatestFrom(model)
@@ -56,34 +58,50 @@ final class MyViewModel: MyViewModelType {
             }.bind(to: self.model)
             .disposed(by: disposeBag)
         
-        self.timerTap
-            .subscribe(onNext: {
-                self.timerString.onNext("o")
-                self.startTimer()
+        
+        self.bindTestTap
+            .withUnretained(self)
+            .subscribe(onNext: { _ in
+                print("Bind Test!!!")
+                self.bindTest()
+                /*
+                 onNext, onCompleted를 모두 전달하는 이벤트는 bind로 처리하면 안됨
+                 */
+                    .subscribe(onNext: {
+                        self.bindTestString.onNext($0)
+                    })
+//                    .bind(to: self.bindTestString)
+                    .disposed(by: self.disposeBag)
             })
             .disposed(by: disposeBag)
         
-        self.timerEvent
-            .withLatestFrom(timerString)
-            .map { timerString -> String in
-                var prevTimerString = timerString
-                prevTimerString += "o"
-                return prevTimerString
-            }
-            .bind(to: self.timerString)
+        
+        self.leftNumButtonTap
+            .subscribe(onNext: {
+                self.leftNum.onNext(Int.random(in: 0...100))
+            })
+            .disposed(by: disposeBag)
+        self.rightNumButtonTap
+            .subscribe(onNext: {
+                self.rightNum.onNext(Int.random(in: 0...100))
+            })
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(leftNum, rightNum)
+            .subscribe(onNext: {(left, right) in
+                let newStr = "\(left) : \(right)"
+                print(newStr)
+                self.leftRightNumString.onNext(newStr)
+            })
             .disposed(by: disposeBag)
     }
     
-    private func startTimer() {
-        print("타이머 시작")
-        timerDisposable?.dispose()
-        timerDisposable = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-            .take(30)
-            .withUnretained(self)
-            .subscribe(onNext: { _ in
-                self.timerEvent.accept(())
-            })
-        
-        timerDisposable?.disposed(by: disposeBag)
+    private func bindTest() -> Observable<String> {
+        return Observable.create { emitter in
+            // onNext, onCompleted를 전달하는 이벤트
+            emitter.onNext("\(Int.random(in: 0...100))")
+            emitter.onCompleted()
+            return Disposables.create()
+        }
     }
 }
