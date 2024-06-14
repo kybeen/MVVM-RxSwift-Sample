@@ -33,6 +33,8 @@ final class BindView: UIView {
     }
     
     private func setUI() {
+        self.backgroundColor = .white
+        
         addSubview(bindTestLabel)
         bindTestLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()

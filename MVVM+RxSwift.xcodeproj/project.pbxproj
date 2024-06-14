@@ -19,6 +19,7 @@
 		B8B624AF2C1C4F3D0021DB84 /* BindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624AE2C1C4F3D0021DB84 /* BindView.swift */; };
 		B8B624B12C1C4F4B0021DB84 /* BindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624B02C1C4F4B0021DB84 /* BindViewModel.swift */; };
 		B8B624B32C1C4F530021DB84 /* BindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624B22C1C4F530021DB84 /* BindViewController.swift */; };
+		B8B624B52C1C60060021DB84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624B42C1C60060021DB84 /* MainViewController.swift */; };
 		B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */; };
 		B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */; };
 		B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		B8B624AE2C1C4F3D0021DB84 /* BindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindView.swift; sourceTree = "<group>"; };
 		B8B624B02C1C4F4B0021DB84 /* BindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewModel.swift; sourceTree = "<group>"; };
 		B8B624B22C1C4F530021DB84 /* BindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewController.swift; sourceTree = "<group>"; };
+		B8B624B42C1C60060021DB84 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B8CE4BC12BA8AA7200E18B9B /* MVVM+RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM+RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			children = (
 				B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */,
 				B8CE4BC62BA8AA7200E18B9B /* SceneDelegate.swift */,
+				B8B624B42C1C60060021DB84 /* MainViewController.swift */,
 				B8BA7A8A2BD7EF1B00B60B3D /* Sample2 */,
 				B8BA7A892BD7EF0D00B60B3D /* Sample1 */,
 				B8B624AD2C1C4F2F0021DB84 /* Bind */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B624B52C1C60060021DB84 /* MainViewController.swift in Sources */,
 				B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */,
 				B8CE4BC92BA8AA7200E18B9B /* MyViewController.swift in Sources */,
 				B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */,
