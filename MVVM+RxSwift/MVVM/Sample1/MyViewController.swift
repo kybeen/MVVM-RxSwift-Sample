@@ -19,8 +19,8 @@ import RxSwift
 class MyViewController: UIViewController {
     
     let myView = MyView()
-    var myViewModel: MyViewModelType = MyViewModel()
-    var disposeBag = DisposeBag()
+    let myViewModel: MyViewModelType = MyViewModel()
+    let disposeBag = DisposeBag()
     
 //    init(myViewModel: MyViewModelType) {
 //        self.myViewModel = myViewModel
@@ -41,7 +41,7 @@ class MyViewController: UIViewController {
         }
         
         // MARK: - MyViewModel 데이터와 바인딩 + 이벤트 input으로 넘기기
-        self.bind(viewModel: self.myViewModel as! MyViewModel)
+        self.bind(viewModel: self.myViewModel)
     }
 
     private func bind(viewModel: MyViewModelType) {
@@ -55,14 +55,6 @@ class MyViewController: UIViewController {
             .bind(to: viewModel.tap)
             .disposed(by: self.disposeBag)
         
-//        self.myView.timerButton.rx.tap
-//            .bind(to: viewModel.timerTap)
-//            .disposed(by: self.disposeBag)
-//        
-//        self.myViewModel.timerString
-//            .bind(to: self.myView.timerLabel.rx.text)
-//            .disposed(by: self.disposeBag)
-        
         self.myView.bindTestButton.rx.tap
             .bind(to: viewModel.bindTestTap)
             .disposed(by: self.disposeBag)
@@ -70,18 +62,6 @@ class MyViewController: UIViewController {
         self.myViewModel.bindTestString
             .bind(to: self.myView.bindTestLabel.rx.text)
             .disposed(by: self.disposeBag)
-        
-        self.myView.leftNumButton.rx.tap
-            .bind(to: viewModel.leftNumButtonTap)
-            .disposed(by: disposeBag)
-        
-        self.myView.rightNumButton.rx.tap
-            .bind(to: viewModel.rightNumButtonTap)
-            .disposed(by: disposeBag)
-        
-        self.myViewModel.leftRightNumString
-            .bind(to: self.myView.leftRightNumLabel.rx.text)
-            .disposed(by: disposeBag)
     }
 }
 

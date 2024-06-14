@@ -24,8 +24,7 @@ class TimerViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        // MARK: - MyViewModel 데이터와 바인딩 + 이벤트 input으로 넘기기
-        self.bind(viewModel: self.timerViewModel as! TimerViewModelType)
+        self.bind(viewModel: self.timerViewModel)
     }
     
     private func bind(viewModel: TimerViewModelType) {

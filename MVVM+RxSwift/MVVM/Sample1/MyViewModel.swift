@@ -15,10 +15,6 @@ protocol MyViewModelType {
     
     var bindTestTap: PublishRelay<Void> { get }
     var bindTestString: PublishSubject<String> { get }
-    
-    var leftNumButtonTap: PublishRelay<Void> { get }
-    var rightNumButtonTap: PublishRelay<Void> { get }
-    var leftRightNumString: PublishSubject<String> { get }
 }
 
 final class MyViewModel: MyViewModelType {
@@ -32,12 +28,6 @@ final class MyViewModel: MyViewModelType {
     
     let bindTestTap = PublishRelay<Void>()
     let bindTestString = PublishSubject<String>()
-    
-    let leftNumButtonTap = PublishRelay<Void>()
-    let rightNumButtonTap = PublishRelay<Void>()
-    let leftNum = PublishSubject<Int>()
-    let rightNum = BehaviorSubject<Int>(value: 2)
-    let leftRightNumString = PublishSubject<String>()
     
     private let model = BehaviorRelay<MyModel>(value: .init(number: 100))
     
@@ -72,26 +62,6 @@ final class MyViewModel: MyViewModelType {
                     })
 //                    .bind(to: self.bindTestString)
                     .disposed(by: self.disposeBag)
-            })
-            .disposed(by: disposeBag)
-        
-        
-        self.leftNumButtonTap
-            .subscribe(onNext: {
-                self.leftNum.onNext(Int.random(in: 0...100))
-            })
-            .disposed(by: disposeBag)
-        self.rightNumButtonTap
-            .subscribe(onNext: {
-                self.rightNum.onNext(Int.random(in: 0...100))
-            })
-            .disposed(by: disposeBag)
-        
-        Observable.combineLatest(leftNum, rightNum)
-            .subscribe(onNext: {(left, right) in
-                let newStr = "\(left) : \(right)"
-                print(newStr)
-                self.leftRightNumString.onNext(newStr)
             })
             .disposed(by: disposeBag)
     }

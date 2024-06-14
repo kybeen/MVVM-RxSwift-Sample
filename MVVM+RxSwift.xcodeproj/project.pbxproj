@@ -13,6 +13,9 @@
 		B8B624A12C1C49570021DB84 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A02C1C49570021DB84 /* TimerView.swift */; };
 		B8B624A32C1C495E0021DB84 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */; };
 		B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A42C1C49670021DB84 /* TimerViewController.swift */; };
+		B8B624A82C1C4CD50021DB84 /* CLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A72C1C4CD50021DB84 /* CLView.swift */; };
+		B8B624AA2C1C4CEB0021DB84 /* CLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A92C1C4CEB0021DB84 /* CLViewModel.swift */; };
+		B8B624AC2C1C4CF00021DB84 /* CLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624AB2C1C4CF00021DB84 /* CLViewController.swift */; };
 		B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */; };
 		B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */; };
 		B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */; };
@@ -36,6 +39,9 @@
 		B8B624A02C1C49570021DB84 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B8B624A42C1C49670021DB84 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		B8B624A72C1C4CD50021DB84 /* CLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLView.swift; sourceTree = "<group>"; };
+		B8B624A92C1C4CEB0021DB84 /* CLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLViewModel.swift; sourceTree = "<group>"; };
+		B8B624AB2C1C4CF00021DB84 /* CLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLViewController.swift; sourceTree = "<group>"; };
 		B8BA7A8B2BD7EF3400B60B3D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B8BA7A8C2BD7EF3400B60B3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B8CE4BC12BA8AA7200E18B9B /* MVVM+RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM+RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +89,16 @@
 				B8B624A42C1C49670021DB84 /* TimerViewController.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		B8B624A62C1C4CAF0021DB84 /* CombineLatest */ = {
+			isa = PBXGroup;
+			children = (
+				B8B624A72C1C4CD50021DB84 /* CLView.swift */,
+				B8B624A92C1C4CEB0021DB84 /* CLViewModel.swift */,
+				B8B624AB2C1C4CF00021DB84 /* CLViewController.swift */,
+			);
+			path = CombineLatest;
 			sourceTree = "<group>";
 		};
 		B8BA7A892BD7EF0D00B60B3D /* Sample1 */ = {
@@ -140,6 +156,7 @@
 				B8BA7A8A2BD7EF1B00B60B3D /* Sample2 */,
 				B8BA7A892BD7EF0D00B60B3D /* Sample1 */,
 				B8B6249F2C1C494E0021DB84 /* Timer */,
+				B8B624A62C1C4CAF0021DB84 /* CombineLatest */,
 				B8B624982C1C49120021DB84 /* Debounce & Throttle */,
 			);
 			path = MVVM;
@@ -232,7 +249,10 @@
 				B8B6249E2C1C493F0021DB84 /* DTViewController.swift in Sources */,
 				B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */,
 				B8CE4BE92BA8ACC300E18B9B /* MyViewModel.swift in Sources */,
+				B8B624AA2C1C4CEB0021DB84 /* CLViewModel.swift in Sources */,
+				B8B624A82C1C4CD50021DB84 /* CLView.swift in Sources */,
 				B8B624A12C1C49570021DB84 /* TimerView.swift in Sources */,
+				B8B624AC2C1C4CF00021DB84 /* CLViewController.swift in Sources */,
 				B8B6249A2C1C49280021DB84 /* DTView.swift in Sources */,
 				B8B6249C2C1C49300021DB84 /* DTViewModel.swift in Sources */,
 				B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */,

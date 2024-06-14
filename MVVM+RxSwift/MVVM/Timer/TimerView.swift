@@ -16,6 +16,7 @@ final class TimerView: UIView {
         label.text = "Timer"
         return label
     }()
+    
     lazy var timerButton: UIButton = {
         let config = UIButton.Configuration.filled()
         var button = UIButton(configuration: config)
