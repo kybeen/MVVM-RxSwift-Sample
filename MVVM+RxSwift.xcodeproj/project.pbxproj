@@ -125,8 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				B8CE4BD92BA8AB3000E18B9B /* MVVM */,
-				B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */,
-				B8CE4BC62BA8AA7200E18B9B /* SceneDelegate.swift */,
 				B8CE4BCD2BA8AA7400E18B9B /* Assets.xcassets */,
 				B8CE4BCF2BA8AA7400E18B9B /* LaunchScreen.storyboard */,
 				B8CE4BD22BA8AA7400E18B9B /* Info.plist */,
@@ -137,10 +135,12 @@
 		B8CE4BD92BA8AB3000E18B9B /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				B8B6249F2C1C494E0021DB84 /* Timer */,
-				B8B624982C1C49120021DB84 /* Debounce & Throttle */,
+				B8CE4BC42BA8AA7200E18B9B /* AppDelegate.swift */,
+				B8CE4BC62BA8AA7200E18B9B /* SceneDelegate.swift */,
 				B8BA7A8A2BD7EF1B00B60B3D /* Sample2 */,
 				B8BA7A892BD7EF0D00B60B3D /* Sample1 */,
+				B8B6249F2C1C494E0021DB84 /* Timer */,
+				B8B624982C1C49120021DB84 /* Debounce & Throttle */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
