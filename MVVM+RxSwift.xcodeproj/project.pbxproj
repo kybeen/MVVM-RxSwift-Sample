@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8B6249A2C1C49280021DB84 /* DTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624992C1C49280021DB84 /* DTView.swift */; };
-		B8B6249C2C1C49300021DB84 /* DTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6249B2C1C49300021DB84 /* DTViewModel.swift */; };
-		B8B6249E2C1C493F0021DB84 /* DTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6249D2C1C493F0021DB84 /* DTViewController.swift */; };
+		B894949A2C1E7A97003068D5 /* ThrottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89494992C1E7A97003068D5 /* ThrottleView.swift */; };
+		B894949C2C1E7AEE003068D5 /* ThrottleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894949B2C1E7AEE003068D5 /* ThrottleViewModel.swift */; };
+		B894949E2C1E7B46003068D5 /* ThrottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894949D2C1E7B46003068D5 /* ThrottleViewController.swift */; };
+		B8B6249A2C1C49280021DB84 /* DebounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624992C1C49280021DB84 /* DebounceView.swift */; };
+		B8B6249C2C1C49300021DB84 /* DebounceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6249B2C1C49300021DB84 /* DebounceViewModel.swift */; };
+		B8B6249E2C1C493F0021DB84 /* DebounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6249D2C1C493F0021DB84 /* DebounceViewController.swift */; };
 		B8B624A12C1C49570021DB84 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A02C1C49570021DB84 /* TimerView.swift */; };
 		B8B624A32C1C495E0021DB84 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */; };
 		B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B624A42C1C49670021DB84 /* TimerViewController.swift */; };
@@ -37,9 +40,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B8B624992C1C49280021DB84 /* DTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTView.swift; sourceTree = "<group>"; };
-		B8B6249B2C1C49300021DB84 /* DTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTViewModel.swift; sourceTree = "<group>"; };
-		B8B6249D2C1C493F0021DB84 /* DTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTViewController.swift; sourceTree = "<group>"; };
+		B89494992C1E7A97003068D5 /* ThrottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleView.swift; sourceTree = "<group>"; };
+		B894949B2C1E7AEE003068D5 /* ThrottleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleViewModel.swift; sourceTree = "<group>"; };
+		B894949D2C1E7B46003068D5 /* ThrottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleViewController.swift; sourceTree = "<group>"; };
+		B8B624992C1C49280021DB84 /* DebounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceView.swift; sourceTree = "<group>"; };
+		B8B6249B2C1C49300021DB84 /* DebounceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceViewModel.swift; sourceTree = "<group>"; };
+		B8B6249D2C1C493F0021DB84 /* DebounceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceViewController.swift; sourceTree = "<group>"; };
 		B8B624A02C1C49570021DB84 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B8B624A22C1C495E0021DB84 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B8B624A42C1C49670021DB84 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -79,14 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B8B624982C1C49120021DB84 /* Debounce & Throttle */ = {
+		B89494982C1E7A01003068D5 /* Throttle */ = {
 			isa = PBXGroup;
 			children = (
-				B8B624992C1C49280021DB84 /* DTView.swift */,
-				B8B6249B2C1C49300021DB84 /* DTViewModel.swift */,
-				B8B6249D2C1C493F0021DB84 /* DTViewController.swift */,
+				B89494992C1E7A97003068D5 /* ThrottleView.swift */,
+				B894949B2C1E7AEE003068D5 /* ThrottleViewModel.swift */,
+				B894949D2C1E7B46003068D5 /* ThrottleViewController.swift */,
 			);
-			path = "Debounce & Throttle";
+			path = Throttle;
+			sourceTree = "<group>";
+		};
+		B8B624982C1C49120021DB84 /* Debounce */ = {
+			isa = PBXGroup;
+			children = (
+				B8B624992C1C49280021DB84 /* DebounceView.swift */,
+				B8B6249B2C1C49300021DB84 /* DebounceViewModel.swift */,
+				B8B6249D2C1C493F0021DB84 /* DebounceViewController.swift */,
+			);
+			path = Debounce;
 			sourceTree = "<group>";
 		};
 		B8B6249F2C1C494E0021DB84 /* Timer */ = {
@@ -177,7 +193,8 @@
 				B8B624AD2C1C4F2F0021DB84 /* Bind */,
 				B8B6249F2C1C494E0021DB84 /* Timer */,
 				B8B624A62C1C4CAF0021DB84 /* CombineLatest */,
-				B8B624982C1C49120021DB84 /* Debounce & Throttle */,
+				B8B624982C1C49120021DB84 /* Debounce */,
+				B89494982C1E7A01003068D5 /* Throttle */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -266,17 +283,20 @@
 				B8BA7A8D2BD7EF3400B60B3D /* TestView.swift in Sources */,
 				B8CE4BC92BA8AA7200E18B9B /* MyViewController.swift in Sources */,
 				B8BA7A8E2BD7EF3400B60B3D /* TestViewController.swift in Sources */,
+				B894949E2C1E7B46003068D5 /* ThrottleViewController.swift in Sources */,
 				B8B624B32C1C4F530021DB84 /* BindViewController.swift in Sources */,
 				B8B624A32C1C495E0021DB84 /* TimerViewModel.swift in Sources */,
-				B8B6249E2C1C493F0021DB84 /* DTViewController.swift in Sources */,
+				B8B6249E2C1C493F0021DB84 /* DebounceViewController.swift in Sources */,
 				B8CE4BC52BA8AA7200E18B9B /* AppDelegate.swift in Sources */,
 				B8CE4BE92BA8ACC300E18B9B /* MyViewModel.swift in Sources */,
 				B8B624AA2C1C4CEB0021DB84 /* CLViewModel.swift in Sources */,
+				B894949A2C1E7A97003068D5 /* ThrottleView.swift in Sources */,
 				B8B624A82C1C4CD50021DB84 /* CLView.swift in Sources */,
 				B8B624A12C1C49570021DB84 /* TimerView.swift in Sources */,
 				B8B624AC2C1C4CF00021DB84 /* CLViewController.swift in Sources */,
-				B8B6249A2C1C49280021DB84 /* DTView.swift in Sources */,
-				B8B6249C2C1C49300021DB84 /* DTViewModel.swift in Sources */,
+				B8B6249A2C1C49280021DB84 /* DebounceView.swift in Sources */,
+				B894949C2C1E7AEE003068D5 /* ThrottleViewModel.swift in Sources */,
+				B8B6249C2C1C49300021DB84 /* DebounceViewModel.swift in Sources */,
 				B8B624A52C1C49670021DB84 /* TimerViewController.swift in Sources */,
 				B8B624AF2C1C4F3D0021DB84 /* BindView.swift in Sources */,
 				B8CE4BDD2BA8AB4000E18B9B /* MyView.swift in Sources */,

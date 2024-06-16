@@ -18,7 +18,9 @@ final class MainViewController: UIViewController {
         ("MVVM+RxSwift 기본", MyViewController()),
         ("Bind 테스트", BindViewController()),
         ("타이머 테스트", TimerViewController()),
-        ("CombineLitest 테스트", CLViewController())
+        ("CombineLatest 테스트", CLViewController()),
+        ("Debounce 테스트", DebounceViewController()),
+        ("Throttle 테스트", ThrottleViewController())
     ]
     
     override func viewDidLoad() {
